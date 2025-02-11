@@ -2,10 +2,26 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "jsx": "react-native",
     "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@screen/*": [
+        "./src/app/screen/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@useCases/*": [
+        "./src/app/useCases/*"
+      ],
+      "@interfaces/*": [
+        "./src/app/interfaces/*"
+      ],
       "@/*": [
-        "./*"
-      ]
+        "./src/*"
+      ] // Alias genérico para tudo dentro de src
     }
   },
   "include": [
