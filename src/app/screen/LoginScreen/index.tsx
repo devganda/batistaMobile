@@ -1,7 +1,8 @@
 import {
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    ActivityIndicator
 } from "react-native";
 
 import { Link } from 'expo-router';
@@ -16,7 +17,9 @@ export default function LoginScreen() {
         email,
         password,
         setEmail,
-        setPassword
+        setPassword,
+        handleLogin,
+        isLoading
     } = useLogin();
 
     return (
@@ -35,12 +38,12 @@ export default function LoginScreen() {
                 onChangeText={setPassword}
                 secureTextEntry
             />
-            <TouchableOpacity style={styled.send} >
-                <Text style={styled.sendText}>Entrar</Text>
+            <TouchableOpacity style={styled.send} onPress={handleLogin} >
+                {isLoading ? <ActivityIndicator size='large' color="#fff" /> : <Text style={styled.sendText}>Entrar</Text>}
             </TouchableOpacity>
             <View style={styled.links}>
+                <Link style={styled.titleLinks} href="./ForgotPassword">Esqueceu sua senha?</Link>
                 <Link style={styled.titleLinks} href="./RegisterScreen">Cadastre-se</Link>
-                <Link style={styled.titleLinks} href="./screen/LoginScreen">Recuperar senha</Link>
             </View>
         </View >
     );

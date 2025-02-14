@@ -34,9 +34,11 @@ const styled = StyleSheet.create({
 
     links: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '60%',
+        justifyContent: 'center',
+        width: '100%',
         marginTop: 10,
+        gap: 10,
+        alignItems: 'center',
     },
 
     titleLinks: {
